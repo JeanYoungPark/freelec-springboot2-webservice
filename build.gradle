@@ -1,38 +1,37 @@
-buildscript {
-    ext { //전역변수 설정
-        springBootVersion = '2.1.7.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
+plugins { // (1)
+    id 'org.springframework.boot' version '2.4.1' // RELEASE 삭제
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
 group 'com.jojoldu.book'
-version '1.0-SNAPSHOT'
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = 1.8
 
-repositories { //각족 의존성 (라이브러리)들을 어떤 원격 저장소에서 받을지 정한다.
+repositories {
     mavenCentral()
     jcenter()
 }
 
-dependencies {//개발에 필요헌 의존성들 선언
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.projectlombok:lombok')
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('com.h2database:h2')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+// for Junit 5
+test { // (2)
+    useJUnitPlatform()
 }
 
-test {
-    useJUnitPlatform()
+dependencies {
+    //(3)
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    // lombok
+    implementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation("org.mariadb.jdbc:mariadb-java-client")
+    implementation('com.h2database:h2')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 }

@@ -41,7 +41,7 @@ deploy:
     bundle_type: zip
     application: freelec-springboot2-webservice
     deployment_group: freelec-springboot2-webservice-group
-    region: ap-notheast-2
+    region: ap-northeast-2
     wait-until-deployed: true
 
 # CI 실행 완료시 메일로 알람.

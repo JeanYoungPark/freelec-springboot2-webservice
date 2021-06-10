@@ -18,9 +18,12 @@ before_install:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r freelec-springboot2-webservice *
-  - mkdir -p deploy
-  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
+  - mkdir -p before-deploy
+  - cp scripts/*.sh before-deploy/
+  - cp appspec.yml before-deploy/
+  - cp build/libs/*.jar before-deploy * # defore-deploy로 이동 후 전체 압축
+  - cd ../ && mkdir -p deploy
+  - mv before-deploy/before-deploy.zip deploy/freelec-springboot2-webservice.zip
 
 deploy:
   - provider: s3

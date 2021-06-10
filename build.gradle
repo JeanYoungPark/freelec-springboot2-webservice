@@ -5,7 +5,7 @@ plugins { // (1)
 }
 
 group 'com.jojoldu.book'
-version '1.0.5-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+version '1.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = 1.8
 
 repositories {

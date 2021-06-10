@@ -18,9 +18,9 @@ before_install:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r freelec-springboot2-wevservice *
+  - zip -r freelec-springboot2-webservice *
   - mkdir -p deploy
-  - mv freelec-springboot2-wevservice.zip deploy/freelec-springboot2-wevservice.zip
+  - mv freelec-springboot2-webserbice.zip deploy/freelec-springboot2-webservice.zip
 
 deploy:
   - provider: s3

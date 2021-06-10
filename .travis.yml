@@ -39,9 +39,9 @@ deploy:
     bucket: freelec-springboot-builder
     key: freelec-springboot2-webservice.zip
     bundle_type: zip
-    applocation: freelec-springboot2-webservice
+    application: freelec-springboot2-webservice
     deployment_group: freelec-springboot2-webservice-group
-    region: ap-notheast
+    region: ap-notheast-2
     wait-until-deployed: true
 
 # CI 실행 완료시 메일로 알람.

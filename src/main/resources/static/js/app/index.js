@@ -72,4 +72,5 @@ var index={
     }
 }
 
-index.init()
+index.init();
+

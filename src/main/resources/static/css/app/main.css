@@ -1,0 +1,12 @@
+.header {width:1280px; margin: 0 auto;}
+.header::after {content:'';display:block;clear:both;}
+.content {width:1280px; margin: 0 auto;}
+.header h1 {float:left; padding-top:20px;}
+.header .login {float:right; padding-top:30px;}
+#user {font-weight:600; padding-right:20px;}
+
+.tit {background:#e7e7e7;font-size:18px;padding:10px;}
+.form div {display:flex}
+.form div label {width:120px;}
+.form .text_box {display:block;}
+.form .text_box textarea {height:300px;}

@@ -22,23 +22,34 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) { //서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있다.
-        model.addAttribute("posts", postsService.findAllDesc());
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-        }
+        model = userInfo(model,user);
         return "index";
     }
 
     @GetMapping("/posts/save")
-    public String postsSave(){
+    public String postsSave(Model model, @LoginUser SessionUser user){
+        model = userInfo(model,user);
         return "posts-save";
     }
 
     @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model){
+    public String postsUpdate(@PathVariable Long id, Model model, @LoginUser SessionUser user){
+        model = userInfo(model,user);
+
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
 
         return "posts-update";
     }
+
+    public Model userInfo(Model model, @LoginUser SessionUser user){
+        model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+            model.addAttribute("userPicture", user.getPicture());
+            model.addAttribute("userEmail", user.getEmail());
+        }
+        return model;
+    }
+
 }

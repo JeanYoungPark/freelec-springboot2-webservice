@@ -10,13 +10,19 @@
 <div class="header">
     <h1><a href="/">스프링 부트로 시작하는 웹 서비스 Ver.3</a></h1>
     <div class="login">
-        {{#userName}} <!--참일 경우-->
-            <span id="user">{{userName}}</span>
+        {{#userEmail}} <!--참일 경우-->
+            {{#userPicture}}
+                <span class="profile"><img src="{{userPicture}}"></span>
+            {{/userPicture}}
+            {{^userPicture}}
+                <span class="profile"></span>
+            {{/userPicture}}
+            <span id="user">{{userEmail}}</span>
             <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-        {{/userName}}
-        {{^userName}} <!--거짓일 경우-->
-            <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">google Login</a>
-            <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-        {{/userName}}
+        {{/userEmail}}
+        {{^userEmail}} <!--거짓일 경우-->
+            <a href="/oauth2/authorization/google" class="google btn btn-success active" role="button">google Login</a>
+            <a href="/oauth2/authorization/naver" class="naver btn btn-secondary active" role="button">Naver Login</a>
+        {{/userEmail}}
     </div>
 </div>

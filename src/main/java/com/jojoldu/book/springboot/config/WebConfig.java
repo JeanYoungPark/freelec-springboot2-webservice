@@ -13,15 +13,6 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     private final LoginUserArgumentResolver loginUserArgumentResolver;
 
-//    @Autowired
-//    CsrfInterceptor csrfInterceptor;
-//
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry)
-//    {
-//        registry.addInterceptor(csrfInterceptor);
-//    }
-
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolverList){
         argumentResolverList.add(loginUserArgumentResolver);

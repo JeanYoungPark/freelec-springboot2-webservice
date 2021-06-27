@@ -1,0 +1,14 @@
+a {color:#333; text-decoration: none;}
+.header {display:flex;justify-content:space-between;align-items:center;width:1280px; margin: 0 auto;padding:20px 0;}
+.content {width:1280px; margin: 0 auto;}
+.header .login {display:flex;align-items: center;}
+.header .profile {display:inline-block;width:30px;height:30px;overflow:hidden;border-radius:100%;margin-right:10px;background:#d7d7d7;}
+.header .profile img {width:100%;}
+.header .login .google {margin-right:10px}
+#user {font-weight:600; padding-right:20px;}
+
+.tit {background:#e7e7e7;font-size:18px;padding:10px;}
+.form div {display:flex}
+.form div label {width:120px;}
+.form .text_box {display:block;}
+.form .text_box textarea {height:300px;}

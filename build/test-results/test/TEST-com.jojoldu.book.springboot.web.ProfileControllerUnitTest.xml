@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jojoldu.book.springboot.web.ProfileControllerUnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-27T17:34:00" hostname="DESKTOP-3EI5VEG" time="0.003">
+  <properties/>
+  <testcase name="active_profile이_없으면_default가_조회된다()" classname="com.jojoldu.book.springboot.web.ProfileControllerUnitTest" time="0.001"/>
+  <testcase name="real_profile이_없으면_첫번째가_조회된다()" classname="com.jojoldu.book.springboot.web.ProfileControllerUnitTest" time="0.0"/>
+  <testcase name="real_profile이_조회된다()" classname="com.jojoldu.book.springboot.web.ProfileControllerUnitTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

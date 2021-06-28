@@ -1,0 +1,20 @@
+{{>layout/header}}
+<div class="content">
+    <h2 class="tit">게시글 보기</h2>
+    <div class="view">
+        <h3>{{post.title}}</h3>
+        <p class="view_info">
+            <span>{{post.author}}</span>,
+            <span>{{post.createdDate}}</span>
+        </p>
+        <div class="view_content">{{post.content}}</div>
+    </div>
+    {{#owner}}
+    <p>
+        <input id="id" value="{{post.id}}" type="hidden">
+        <a href="/posts/update/{{post.id}}" class="btn btn-primary">수정</a>
+        <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+    </p>
+    {{/owner}}
+</div>
+{{>layout/footer}}

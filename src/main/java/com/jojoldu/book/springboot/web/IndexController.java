@@ -26,6 +26,22 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/view/{id}")
+    public String view(@PathVariable Long id, Model model, @LoginUser SessionUser user){
+        model = userInfo(model,user);
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("post", dto);
+        //글쓴이일 경우
+        boolean owner;
+        if(user == null) owner = false;
+        else {
+            owner = (user.getName().equals(dto.getAuthor()))?true:false;
+        }
+        model.addAttribute("owner", owner);
+
+        return "view";
+    }
+
     @GetMapping("/posts/save")
     public String postsSave(Model model, @LoginUser SessionUser user){
         model = userInfo(model,user);

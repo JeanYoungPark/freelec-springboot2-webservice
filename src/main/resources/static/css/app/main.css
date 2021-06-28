@@ -1,4 +1,4 @@
-a {color:#333; text-decoration: none;}
+a, a:hover {color:#333; text-decoration: none;}
 .header {display:flex;justify-content:space-between;align-items:center;width:1280px; margin: 0 auto;padding:20px 0;}
 .content {width:1280px; margin: 0 auto;}
 .header .login {display:flex;align-items: center;}
@@ -12,3 +12,6 @@ a {color:#333; text-decoration: none;}
 .form div label {width:120px;}
 .form .text_box {display:block;}
 .form .text_box textarea {height:300px;}
+
+.view .view_info {border-bottom:1px solid #d0d0d0; padding-bottom:10px;}
+.view .view_content {height:300px;}
